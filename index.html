@@ -21,8 +21,29 @@
     .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}.product-visual{height:200px;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#e5f1ff,#f2f6fb);position:relative}.product-visual svg{width:70%;height:75%;filter:drop-shadow(0 18px 13px #0c22452b)}.tag{position:absolute;top:13px;left:13px;background:#e5f0ff;color:#155dc7;border-radius:6px;padding:6px 8px;font-size:10px;font-weight:850;letter-spacing:.04em}.product-info{padding:18px;display:flex;flex:1;flex-direction:column}.product-info small{color:var(--muted)}.product-info h3{font-size:16px;line-height:1.4;margin:8px 0 10px;min-height:45px}.price{font-weight:850;font-size:20px;margin:auto 0 15px}.product button{width:100%;background:#eef4ff;color:#135ac8;border:0;border-radius:9px;padding:11px;font-weight:750}.product button:hover{background:#dceaff}
     .support{background:var(--navy);color:white}.support-inner{display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:center}.support h2{font-size:clamp(32px,4vw,47px);letter-spacing:-.05em;line-height:1.1;margin:13px 0}.support p{color:#cbdaf0;line-height:1.7;max-width:650px}.support-box{border:1px solid #4c6a94;background:#ffffff0a;border-radius:17px;padding:25px}.support-box .icon{font-size:37px}.support-box h3{margin:12px 0 8px}.support-box p{font-size:14px}.support-note{font-size:13px;color:#cbdaf0;margin-top:13px}.status{display:none;color:#125c37;background:#e4f8eb;border:1px solid #b6e8c7;border-radius:10px;padding:12px 15px;margin-top:16px}.status.show{display:block}
     footer{background:#081529;color:#a8bbd4;padding:40px 0}footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}footer strong{color:white;font-size:20px}
+
+    /* ===== xApp return-form panel ===== */
+    .xapp-panel[hidden],.xapp-pill[hidden]{display:none!important}
+    .xapp-panel{position:fixed;left:20px;bottom:20px;z-index:40;width:min(440px,calc(100vw - 40px));height:min(660px,82vh);background:white;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 70px #0a1a3a55;display:flex;flex-direction:column;overflow:hidden}
+    .xapp-panel:focus{outline:none}
+    .xapp-head{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--navy);color:white;padding:11px 12px 11px 16px;font-size:14px}
+    .xapp-head .xapp-btns{display:flex;gap:6px}
+    .xapp-head button{background:#ffffff1f;color:white;border:0;border-radius:8px;width:32px;height:32px;font-size:16px;line-height:1}
+    .xapp-head button:hover,.xapp-head button:focus-visible{background:#ffffff40}
+    .xapp-body{flex:1;background:#f2f6fb}
+    .xapp-body iframe{width:100%;height:100%;border:0;display:block;background:white}
+    .xapp-foot{padding:8px 14px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center;background:white}
+    .xapp-foot a{color:var(--blue);font-weight:700}
+    .xapp-panel.min{height:auto}.xapp-panel.min .xapp-body,.xapp-panel.min .xapp-foot{display:none}
+    .xapp-pill{position:fixed;left:20px;bottom:20px;z-index:40;background:var(--blue);color:white;border:0;border-radius:99px;padding:13px 20px;font-weight:750;font-size:14px;box-shadow:0 14px 34px #1769ed66}
+    .xapp-pill:hover{background:#0f56c9}
+    .toast{position:fixed;left:20px;bottom:78px;z-index:41;background:var(--navy);color:white;font-size:13px;padding:10px 14px;border-radius:10px;box-shadow:0 10px 30px #0a1a3a55;max-width:min(360px,calc(100vw - 40px))}
+    .toast[hidden]{display:none}
+
+
     @media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-inner{grid-template-columns:1fr 0.7fr}.laptop{transform:scale(.75) rotate(-8deg)}.phone{transform:scale(.8) rotate(13deg)}}
-    @media(max-width:650px){.wrap{width:min(100% - 30px,1160px)}nav{gap:12px}nav a:not(.header-cta){display:none}.logo{font-size:21px}.hero-inner{grid-template-columns:1fr;padding:48px 0}.hero-art{min-height:230px}.laptop{transform:scale(.7) rotate(-8deg)}.phone{right:14%;transform:scale(.72) rotate(13deg)}.benefits{grid-template-columns:1fr;margin-top:15px}.benefit{padding:15px}.products{grid-template-columns:repeat(2,1fr);gap:10px}.product-visual{height:145px}.product-info{padding:12px}.product-info h3{font-size:14px}.price{font-size:17px}.support-inner{grid-template-columns:1fr;gap:22px}section{padding:50px 0}}
+    @media(max-width:650px){.wrap{width:min(100% - 30px,1160px)}nav{gap:12px}nav a:not(.header-cta){display:none}.logo{font-size:21px}.hero-inner{grid-template-columns:1fr;padding:48px 0}.hero-art{min-height:230px}.laptop{transform:scale(.7) rotate(-8deg)}.phone{right:14%;transform:scale(.72) rotate(13deg)}.benefits{grid-template-columns:1fr;margin-top:15px}.benefit{padding:15px}.products{grid-template-columns:repeat(2,1fr);gap:10px}.product-visual{height:145px}.product-info{padding:12px}.product-info h3{font-size:14px}.price{font-size:17px}.support-inner{grid-template-columns:1fr;gap:22px}section{padding:50px 0}
+      .xapp-panel{left:0;right:0;bottom:0;width:auto;height:78vh;border-radius:16px 16px 0 0}.xapp-pill{left:12px;bottom:12px}.toast{left:12px;bottom:68px}}
   </style>
 </head>
 <body>
@@ -40,6 +61,23 @@
     <section class="support" id="support"><div class="wrap support-inner"><div><div class="eyebrow">Meet your AI support assistant</div><h2>Questions? Evan is here to help.</h2><p>Need to check an order, request a change, start a return, or ask a product question? Speak with Evan, ElectroVia's AI-powered voice assistant.</p><p>General questions don't require account verification. For order-specific requests, Evan will guide you through verification before accessing your order.</p><div class="support-note" id="call-instructions">Use the Cognigy phone widget at the bottom-right of this page to start your call. Your browser may ask for microphone permission.</div></div><div class="support-box"><div class="icon">🎙️</div><h3>Real voice conversations</h3><p>Talk naturally with Evan, ask follow-up questions, and get help with your ElectroVia experience.</p><div style="border-top:1px solid #466184;padding-top:15px;font-size:13px;color:#a9cfff">Powered by Cognigy VoiceGateway</div></div></div></section>
   </main>
   <footer><div class="wrap"><strong>ϟ ElectroVia</strong><span>Technology for every day. Support when it matters.</span><span>© 2026 ElectroVia · Capstone demonstration</span></div></footer>
+
+  <!-- xApp return form (opened by Evan during a call) -->
+  <div id="xapp-panel" class="xapp-panel" role="dialog" aria-label="Return request form" tabindex="-1" hidden>
+    <div class="xapp-head">
+      <strong>Return request form</strong>
+      <div class="xapp-btns">
+        <button type="button" id="xapp-min" aria-label="Minimize form" title="Minimize">–</button>
+        <button type="button" id="xapp-close" aria-label="Close form (you can reopen it)" title="Close (you can reopen it)">✕</button>
+      </div>
+    </div>
+    <div class="xapp-body" id="xapp-body"></div>
+    <div class="xapp-foot"><span>Your progress is kept if you minimize or close.</span><a id="xapp-newtab" href="#" target="_blank" rel="noopener noreferrer">Open in new tab</a></div>
+  </div>
+  <button type="button" id="xapp-pill" class="xapp-pill" hidden>📝 Reopen return form</button>
+  <div id="xapp-toast" class="toast" role="status" hidden></div>
+
+
   <script>
     document.querySelectorAll('.chip').forEach(button=>button.addEventListener('click',()=>{
       document.querySelectorAll('.chip').forEach(b=>b.classList.remove('active'));
@@ -51,14 +89,249 @@
     }));
 
   </script>
-  <!-- Cognigy-generated Click-to-Call integration for Evan -->
-  <script src="https://github.com/Cognigy/click-to-call-widget/releases/latest/download/webRTCWidget.js"></script>
+
+  <!-- Cognigy Click-to-Call widget: SELF-HOSTED copy (place webRTCWidget.js in the same folder as this file) -->
+  <script src="webRTCWidget.js"></script>
   <script>
-    addEventListener('load',()=>{
-      if(window.initWebRTCWidget){
-        window.initWebRTCWidget('https://cognigy-endpoint-na1.nicecxone.com/261032e1748b627f879ca538b442714b48bae0b6517f662b9c55a20239b2072b');
+  (function () {
+    'use strict';
+
+    /* ------------------------------------------------------------------
+       CONFIGURATION
+       ------------------------------------------------------------------ */
+    var CONFIG = {
+      // Cognigy Voice Gateway endpoint (same value Cognigy generated for you)
+      ENDPOINT_URL: 'https://cognigy-endpoint-na1.nicecxone.com/261032e1748b627f879ca538b442714b48bae0b6517f662b9c55a20239b2072b',
+
+      // Log call and form events to the browser console (DevTools). Set to false to silence.
+      CONSOLE_LOG: true,
+
+      // The xApp URL sent by the Flow is only loaded if it is https and its host
+      // matches one of these. Add your xApp host here if the console shows "blocked".
+      XAPP_ALLOWED_HOSTS: ['.cognigy.ai', '.nicecxone.com']
+    };
+
+    var $ = function (id) { return document.getElementById(id); };
+
+    /* Console-only event log. Open the browser DevTools console to watch call and form events. */
+    function trace(level, message) {
+      if (!CONFIG.CONSOLE_LOG) return;
+      console.log('[ElectroVia] ' + message);
+    }
+
+    // Redacts the xApp session URL (it is a live session link) and truncates long bodies.
+    function safeBody(body) {
+      var text;
+      try {
+        var obj = typeof body === 'string' ? JSON.parse(body) : body;
+        (function scrub(o, depth) {
+          if (!o || typeof o !== 'object' || depth > 4) return;
+          if (typeof o.xAppUrl === 'string') {
+            try { o.xAppUrl = new URL(o.xAppUrl).hostname + '/…(redacted)'; } catch (e) { o.xAppUrl = '(redacted)'; }
+          }
+          if (o.data) scrub(o.data, depth + 1);
+        })(obj, 0);
+        text = JSON.stringify(obj);
+      } catch (e) {
+        text = typeof body === 'string' ? body : '(unreadable body)';
+        text = text.replace(/https?:\/\/\S+/g, '(url redacted)');
       }
+      return text.length > 300 ? text.slice(0, 300) + '…' : text;
+    }
+
+    /* ------------------------------------------------------------------
+       xAPP RETURN FORM
+       States: hidden → open ⇄ min  |  open → closed(pill)  |  any → hidden
+       ------------------------------------------------------------------ */
+    var xPanel = $('xapp-panel'), xBody = $('xapp-body'), xPill = $('xapp-pill'),
+        xToast = $('xapp-toast'), xNewTab = $('xapp-newtab');
+    var xState = 'hidden', xCurrentUrl = null, toastTimer = null;
+
+    function validXAppUrl(raw) {
+      if (typeof raw !== 'string' || raw.length > 2048) return null;
+      var u;
+      try { u = new URL(raw); } catch (e) { return null; }
+      if (u.protocol !== 'https:') return null;
+      var host = u.hostname.toLowerCase();
+      var ok = CONFIG.XAPP_ALLOWED_HOSTS.some(function (h) {
+        h = h.toLowerCase();
+        return h.charAt(0) === '.' ? (host === h.slice(1) || host.slice(-h.length) === h) : host === h;
+      });
+      return ok ? u.href : null;
+    }
+
+    function showToast(msg) {
+      xToast.textContent = msg;
+      xToast.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { xToast.hidden = true; }, 5000);
+    }
+
+    function openXApp(rawUrl) {
+      var url = validXAppUrl(rawUrl);
+      if (!url) {
+        trace('error', 'xApp URL blocked (missing, not https, or host not in XAPP_ALLOWED_HOSTS)');
+        return;
+      }
+      // Same session already loaded? Just bring it back so the caller keeps their progress.
+      if (!(xCurrentUrl === url && xBody.firstChild)) {
+        xBody.textContent = '';
+        var f = document.createElement('iframe');
+        f.id = 'xapp-frame';
+        f.title = 'Return request form';
+        f.setAttribute('sandbox', 'allow-scripts allow-forms allow-same-origin');
+        f.referrerPolicy = 'no-referrer';
+        f.addEventListener('load', function () { trace('xapp', 'xApp page loaded'); });
+        f.src = url;
+        xBody.appendChild(f);
+        xCurrentUrl = url;
+        xNewTab.href = url;
+      }
+      xPill.hidden = true;
+      xToast.hidden = true;
+      xPanel.hidden = false;
+      xPanel.classList.remove('min');
+      xState = 'open';
+      xPanel.focus();
+      trace('xapp', 'Return form opened');
+    }
+
+    function minimizeXApp() {
+      if (xState !== 'open') return;
+      xPanel.classList.add('min');
+      xState = 'min';
+      trace('xapp', 'Return form minimized');
+    }
+
+    function restoreXApp() {
+      xPill.hidden = true;
+      xToast.hidden = true;
+      xPanel.hidden = false;
+      xPanel.classList.remove('min');
+      xState = 'open';
+      xPanel.focus();
+      trace('xapp', 'Return form restored');
+    }
+
+    function dismissToPill() {
+      // "X" hides the panel but keeps the loaded form so nothing the caller typed is lost.
+      xPanel.hidden = true;
+      xPill.hidden = false;
+      xState = 'closed';
+      showToast('Your return form is still saved. Tap "Reopen return form" any time.');
+      trace('xapp', 'Return form closed by caller (kept; pill shown)');
+    }
+
+    function destroyXApp(reason) {
+      if (xState === 'hidden' && !xBody.firstChild) return;
+      xBody.textContent = '';
+      xCurrentUrl = null;
+      xNewTab.removeAttribute('href');
+      xPanel.hidden = true;
+      xPanel.classList.remove('min');
+      xPill.hidden = true;
+      xToast.hidden = true;
+      xState = 'hidden';
+      trace('xapp', 'Return form removed (' + reason + ')');
+    }
+
+    $('xapp-min').addEventListener('click', function () {
+      if (xState === 'min') { restoreXApp(); } else { minimizeXApp(); }
     });
+    $('xapp-close').addEventListener('click', dismissToPill);
+    xPill.addEventListener('click', restoreXApp);
+    xPanel.querySelector('.xapp-head strong').addEventListener('click', function () { if (xState === 'min') restoreXApp(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && xState === 'open') minimizeXApp(); });
+
+    /* ------------------------------------------------------------------
+       READING MESSAGES FROM THE FLOW (SIP INFO)
+       Flow → Say node Data:  {"openXApp": true, "xAppUrl": "..."}   opens the form
+                              {"closeXApp": true}                    closes it (after submit)
+       ------------------------------------------------------------------ */
+    function extractPayload(body) {
+      if (body == null) return null;
+      if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { return null; } }
+      if (!body || typeof body !== 'object') return null;
+      var out = {}, cur = body, depth = 0;
+      while (cur && typeof cur === 'object' && depth < 4) {
+        ['openXApp', 'closeXApp', 'xAppUrl'].forEach(function (k) {
+          if (cur[k] !== undefined && out[k] === undefined) out[k] = cur[k];
+        });
+        cur = cur.data;
+        depth++;
+      }
+      return out;
+    }
+
+    function handleInfo(ev) {
+      var info = ev && (ev.info || ev);
+      var body = info && (info.body !== undefined ? info.body : (info.request && info.request.body));
+      if (body === undefined && ev && typeof ev.body !== 'undefined') body = ev.body;
+      if (body == null) return;
+      trace('info', 'INFO from Evan: ' + safeBody(body));
+      var p = extractPayload(body);
+      if (!p) return;
+      if (p.closeXApp === true) { destroyXApp('form submitted / closed by Flow'); return; }
+      if (p.openXApp === true) openXApp(p.xAppUrl);
+    }
+
+    /* ------------------------------------------------------------------
+       WIDGET + CALL SESSION WIRING
+       ------------------------------------------------------------------ */
+    var SESSION_EVENTS = ['connecting', 'sending', 'progress', 'accepted', 'confirmed', 'muted', 'unmuted', 'hold', 'unhold'];
+    var END_EVENTS = ['ended', 'failed', 'terminated'];
+
+    function attachSession(arg) {
+      var session = (arg && arg.session) ? arg.session : arg;
+      if (!session || typeof session.on !== 'function') { trace('warn', 'newRTCSession fired but session object was unreadable'); return; }
+
+      trace('call', 'New call session (' + (session.direction || 'direction unknown') + ')');
+
+      SESSION_EVENTS.forEach(function (name) {
+        session.on(name, function () {
+          trace('call', 'session: ' + name);
+        });
+      });
+
+      session.on('peerconnection', function () { trace('call', 'session: peerconnection (audio path negotiating)'); });
+
+      session.on('newInfo', function (ev) {
+        if (ev && ev.originator && ev.originator !== 'remote') return;
+        try { handleInfo(ev); } catch (e) { trace('error', 'Could not read INFO message'); }
+      });
+
+      END_EVENTS.forEach(function (name) {
+        session.on(name, function (e) {
+          var cause = e && typeof e.cause === 'string' ? ' (' + e.cause + ')' : '';
+          trace(name === 'failed' ? 'error' : 'call', 'session: ' + name + cause);
+          destroyXApp('call ' + name);
+        });
+      });
+    }
+
+    addEventListener('load', function () {
+      trace('info', 'Page loaded; initializing Cognigy widget');
+      if (typeof window.initWebRTCWidget !== 'function') {
+        trace('error', 'Widget script not found. Is webRTCWidget.js in the same folder as index.html?');
+        return;
+      }
+      var started;
+      try { started = Promise.resolve(window.initWebRTCWidget(CONFIG.ENDPOINT_URL)); }
+      catch (e) { trace('error', 'initWebRTCWidget threw an error'); return; }
+
+      started.then(function (widget) {
+        trace('ok', 'Widget initialized; waiting for calls');
+        if (!widget || typeof widget.on !== 'function') { trace('warn', 'Widget object has no event API; call events unavailable'); return; }
+        widget.on('newRTCSession', attachSession);
+        // Connection-level events (logged only if the widget exposes them)
+        ['connected', 'disconnected', 'registered', 'unregistered', 'registrationFailed'].forEach(function (name) {
+          widget.on(name, function () { trace('info', 'widget: ' + name); });
+        });
+      }, function () {
+        trace('error', 'Widget failed to initialize (check the endpoint URL and that the widget is enabled in Cognigy)');
+      });
+    });
+  })();
   </script>
 </body>
 </html>
