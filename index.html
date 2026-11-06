@@ -316,7 +316,18 @@
         return;
       }
       var started;
-      try { started = Promise.resolve(window.initWebRTCWidget(CONFIG.ENDPOINT_URL)); }
+try {
+  var params = new URLSearchParams(window.location.search);
+  var userId = params.get("user") || "Paloma";
+ 
+  console.log("Call widget userId:", userId);
+ 
+  started = Promise.resolve(
+    window.initWebRTCWidget(CONFIG.ENDPOINT_URL, {
+      userId: userId
+    })
+  );
+}
       catch (e) { trace('error', 'initWebRTCWidget threw an error'); return; }
 
       started.then(function (widget) {
